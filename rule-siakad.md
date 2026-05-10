@@ -377,15 +377,3 @@ Admin     → admin@siakad.com     / password  (NIP: 000001)
 Dosen     → dosen@siakad.com     / password  (NIP: 198501012010011001)
 Mahasiswa → mahasiswa@siakad.com / password  (NIM: 2024010001)
 ```
-
----
-
-## Instalasi Cepat
-
-```bash
-composer create-project laravel/laravel siakad
-cd siakad
-# set .env → DB_DATABASE=siakad
-php artisan migrate --seed
-php artisan serve
-```
