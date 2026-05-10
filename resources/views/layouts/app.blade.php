@@ -27,6 +27,24 @@
         .page-content { padding: 24px; flex: 1; overflow-y: auto; }
         .card { border: none; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
         .stat-card { border-left: 4px solid; }
+        /* Pagination */
+        .pagination { gap: 4px; }
+        .page-link {
+            border-radius: 6px !important;
+            border: 1px solid #dee2e6;
+            color: #495057;
+            min-width: 36px;
+            text-align: center;
+            font-size: .85rem;
+            padding: 5px 10px;
+        }
+        .page-item.active .page-link {
+            background: #1a237e;
+            border-color: #1a237e;
+            color: #fff;
+        }
+        .page-link:hover { background: #f0f0f0; color: #1a237e; border-color: #dee2e6; }
+        .page-item.disabled .page-link { background: #f8f9fa; color: #adb5bd; }
     </style>
 </head>
 <body>
