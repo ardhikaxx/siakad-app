@@ -28,6 +28,11 @@ class Schedule extends Model
         return $this->belongsTo(Room::class);
     }
 
+    public function meetings(): HasMany
+    {
+        return $this->hasMany(Meeting::class);
+    }
+
     public function enrollments(): HasMany
     {
         return $this->hasMany(Enrollment::class);
