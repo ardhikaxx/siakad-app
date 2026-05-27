@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
         User::create([
             'role_id' => $adminRole->id,
             'name' => 'Administrator',
-            'email' => 'admin@siakad.com',
+            'email' => 'admin@gmail.com',
             'password' => Hash::make('password'),
             'identifier' => '000001',
             'is_active' => true,
@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
             User::create([
                 'role_id' => $dosenRole->id,
                 'name' => $name,
-                'email' => strtolower(str_replace([' ', '.', ','], ['', '', ''], $name)) . '@siakad.com',
+                'email' => strtolower(str_replace([' ', '.', ','], ['', '', ''], $name)) . '@gmail.com',
                 'password' => Hash::make('password'),
                 'identifier' => '19850' . str_pad($i + 1, 2, '0', STR_PAD_LEFT) . '2010011001',
                 'is_active' => true,
@@ -55,9 +55,10 @@ class UserSeeder extends Seeder
             User::create([
                 'role_id' => $mahasiswaRole->id,
                 'name' => $name,
-                'email' => strtolower(str_replace(' ', '', $name)) . '@siakad.com',
+                'email' => strtolower(str_replace(' ', '', $name)) . '@gmail.com',
                 'password' => Hash::make('password'),
                 'identifier' => '2024' . str_pad($i + 1, 4, '0', STR_PAD_LEFT),
+                'address' => 'Jl. Pendidikan No. ' . ($i + 1) . ', Kota Pelajar',
                 'is_active' => true,
             ]);
         }
