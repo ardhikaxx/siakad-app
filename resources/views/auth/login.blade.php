@@ -31,7 +31,10 @@
                 <label class="form-label fw-semibold">Password</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="fa fa-lock"></i></span>
-                    <input type="password" name="password" class="form-control" placeholder="••••••••" required>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="••••••••" required>
+                    <button class="btn btn-outline-secondary toggle-password" type="button" data-target="password">
+                        <i class="fa fa-eye"></i>
+                    </button>
                 </div>
             </div>
             <div class="mb-3 form-check">
