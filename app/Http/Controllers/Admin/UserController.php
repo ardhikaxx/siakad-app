@@ -31,6 +31,7 @@ class UserController extends Controller
             'password'   => 'required|min:6|confirmed',
             'role_id'    => 'required|exists:roles,id',
             'identifier' => 'required|string|max:50|unique:users',
+            'address'    => 'nullable|string',
             'is_active'  => 'boolean',
         ]);
 
@@ -40,6 +41,7 @@ class UserController extends Controller
             'password'   => Hash::make($request->password),
             'role_id'    => $request->role_id,
             'identifier' => $request->identifier,
+            'address'    => $request->address,
             'is_active'  => $request->boolean('is_active', true),
         ]);
 
@@ -60,6 +62,7 @@ class UserController extends Controller
             'password'   => 'nullable|min:6|confirmed',
             'role_id'    => 'required|exists:roles,id',
             'identifier' => ['required','string','max:50', Rule::unique('users')->ignore($user->id)],
+            'address'    => 'nullable|string',
             'is_active'  => 'boolean',
         ]);
 
@@ -68,6 +71,7 @@ class UserController extends Controller
             'email'      => $request->email,
             'role_id'    => $request->role_id,
             'identifier' => $request->identifier,
+            'address'    => $request->address,
             'is_active'  => $request->boolean('is_active'),
         ];
 
