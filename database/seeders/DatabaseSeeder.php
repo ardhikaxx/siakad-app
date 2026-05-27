@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             RoomSeeder::class,
             ScheduleSeeder::class,
             EnrollmentSeeder::class,
+            MeetingSeeder::class,
         ]);
     }
 }
