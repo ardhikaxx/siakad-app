@@ -26,9 +26,10 @@ class CourseController extends Controller
             'name'    => 'required|string|max:150',
             'code'    => 'required|string|max:20|unique:courses',
             'credits' => 'required|integer|min:1|max:6',
+            'semester'=> 'required|string|max:20',
         ]);
 
-        Course::create($request->only('name', 'code', 'credits'));
+        Course::create($request->only('name', 'code', 'credits', 'semester'));
         return redirect()->route('admin.courses.index')->with('success', 'Mata kuliah berhasil ditambahkan.');
     }
 
@@ -43,9 +44,10 @@ class CourseController extends Controller
             'name'    => 'required|string|max:150',
             'code'    => ['required','string','max:20', Rule::unique('courses')->ignore($course->id)],
             'credits' => 'required|integer|min:1|max:6',
+            'semester'=> 'required|string|max:20',
         ]);
 
-        $course->update($request->only('name', 'code', 'credits'));
+        $course->update($request->only('name', 'code', 'credits', 'semester'));
         return redirect()->route('admin.courses.index')->with('success', 'Mata kuliah berhasil diperbarui.');
     }
 
