@@ -29,6 +29,14 @@ Route::middleware(['auth', 'role:dosen'])->prefix('dosen')->name('dosen.')->grou
     Route::get('dashboard', [Dosen\DashboardController::class, 'index'])->name('dashboard');
     Route::get('schedules', [Dosen\ScheduleController::class, 'index'])->name('schedules');
     Route::get('schedules/{schedule}/students', [Dosen\ScheduleController::class, 'students'])->name('schedules.students');
+    
+    // Pertemuan & Presensi
+    Route::get('schedules/{schedule}/meetings', [Dosen\MeetingController::class, 'index'])->name('meetings.index');
+    Route::post('schedules/{schedule}/meetings', [Dosen\MeetingController::class, 'store'])->name('meetings.store');
+    Route::delete('schedules/{schedule}/meetings/{meeting}', [Dosen\MeetingController::class, 'destroy'])->name('meetings.destroy');
+    
+    Route::get('schedules/{schedule}/meetings/{meeting}/attendances', [Dosen\AttendanceController::class, 'index'])->name('attendances.index');
+    Route::put('schedules/{schedule}/meetings/{meeting}/attendances', [Dosen\AttendanceController::class, 'update'])->name('attendances.update');
 });
 
 // Mahasiswa
