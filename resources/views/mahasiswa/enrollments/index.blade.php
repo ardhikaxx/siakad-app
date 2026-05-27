@@ -2,8 +2,8 @@
 @section('title', 'KRS Saya')
 
 @section('content')
-<div class="card">
-    <div class="card-header d-flex justify-content-between align-items-center">
+<div class="card shadow-sm">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
         <h6 class="mb-0"><i class="fa fa-clipboard-list me-2"></i>KRS — Mata Kuliah Saya</h6>
         <a href="{{ route('mahasiswa.schedules') }}" class="btn btn-sm btn-outline-primary">
             <i class="fa fa-plus me-1"></i> Tambah Mata Kuliah
@@ -11,7 +11,7 @@
     </div>
     <div class="card-body p-0">
         <div class="table-responsive">
-            <table class="table table-hover table-striped mb-0">
+            <table class="table table-hover table-striped mb-0 text-nowrap">
                 <thead class="table-dark">
                     <tr><th>#</th><th>Mata Kuliah</th><th>Dosen</th><th>Ruangan</th><th>Hari & Jam</th><th>Semester</th><th>SKS</th><th>Aksi</th></tr>
                 </thead>

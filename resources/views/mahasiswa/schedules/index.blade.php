@@ -3,11 +3,11 @@
 
 @section('content')
 {{-- Filter Semester --}}
-<div class="card mb-3">
+<div class="card shadow-sm mb-3">
     <div class="card-body py-2">
-        <form method="GET" class="d-flex align-items-center gap-2">
+        <form method="GET" class="d-flex flex-wrap align-items-center gap-2">
             <label class="form-label mb-0 fw-semibold">Semester:</label>
-            <select name="semester" class="form-select form-select-sm" style="width:auto" onchange="this.form.submit()">
+            <select name="semester" class="form-select form-select-sm w-auto" onchange="this.form.submit()">
                 <option value="">Semua</option>
                 @foreach($semesters as $sem)
                     <option value="{{ $sem }}" {{ $semester == $sem ? 'selected' : '' }}>{{ $sem }}</option>
@@ -17,13 +17,13 @@
     </div>
 </div>
 
-<div class="card">
+<div class="card shadow-sm">
     <div class="card-header">
         <h6 class="mb-0"><i class="fa fa-calendar-alt me-2"></i>Jadwal Tersedia</h6>
     </div>
     <div class="card-body p-0">
         <div class="table-responsive">
-            <table class="table table-hover table-striped mb-0">
+            <table class="table table-hover table-striped mb-0 text-nowrap">
                 <thead class="table-dark">
                     <tr><th>Mata Kuliah</th><th>Dosen</th><th>Ruangan</th><th>Hari & Jam</th><th>Semester</th><th>Peserta</th><th>Aksi</th></tr>
                 </thead>
