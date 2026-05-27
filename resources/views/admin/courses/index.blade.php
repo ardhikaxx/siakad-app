@@ -12,7 +12,7 @@
     <div class="card-body p-0">
         <table class="table table-hover table-striped mb-0">
             <thead class="table-dark">
-                <tr><th>#</th><th>Kode</th><th>Nama Mata Kuliah</th><th>SKS</th><th>Aksi</th></tr>
+                <tr><th>#</th><th>Kode</th><th>Nama Mata Kuliah</th><th>SKS</th><th>Semester</th><th>Aksi</th></tr>
             </thead>
             <tbody>
                 @forelse($courses as $course)
@@ -21,6 +21,7 @@
                     <td><span class="badge bg-secondary">{{ $course->code }}</span></td>
                     <td>{{ $course->name }}</td>
                     <td>{{ $course->credits }} SKS</td>
+                    <td>Semester {{ $course->semester }}</td>
                     <td>
                         <a href="{{ route('admin.courses.edit', $course) }}" class="btn btn-sm btn-outline-warning">
                             <i class="fa fa-edit"></i>
@@ -34,7 +35,7 @@
                     </td>
                 </tr>
                 @empty
-                <tr><td colspan="5" class="text-center text-muted py-4">Belum ada mata kuliah.</td></tr>
+                <tr><td colspan="6" class="text-center text-muted py-4">Belum ada mata kuliah.</td></tr>
                 @endforelse
             </tbody>
         </table>
