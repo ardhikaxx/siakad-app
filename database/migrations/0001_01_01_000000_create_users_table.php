@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('email', 150)->unique();
             $table->string('password');
             $table->string('identifier', 50)->unique(); // NIP atau NIM
+            $table->text('address')->nullable();
             $table->boolean('is_active')->default(true);
             $table->rememberToken();
             $table->timestamps();
