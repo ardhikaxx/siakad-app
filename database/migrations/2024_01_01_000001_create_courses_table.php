@@ -13,6 +13,7 @@ return new class extends Migration
             $table->string('name', 150);
             $table->string('code', 20)->unique();
             $table->tinyInteger('credits'); // SKS
+            $table->string('semester', 20)->nullable();
             $table->timestamps();
         });
     }
