@@ -25,6 +25,12 @@
                     value="{{ old('credits') }}" min="1" max="6" required>
                 @error('credits')<div class="invalid-feedback">{{ $message }}</div>@enderror
             </div>
+            <div class="mb-3">
+                <label class="form-label">Semester</label>
+                <input type="text" name="semester" class="form-control @error('semester') is-invalid @enderror"
+                    value="{{ old('semester') }}" placeholder="cth: 1, 2, atau Ganjil" required>
+                @error('semester')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            </div>
             <div class="d-flex gap-2">
                 <button type="submit" class="btn btn-primary"><i class="fa fa-save me-1"></i> Simpan</button>
                 <a href="{{ route('admin.courses.index') }}" class="btn btn-secondary">Batal</a>
