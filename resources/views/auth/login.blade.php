@@ -37,9 +37,12 @@
                     </button>
                 </div>
             </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" name="remember" class="form-check-input" id="remember">
-                <label class="form-check-label" for="remember">Ingat saya</label>
+            <div class="mb-3 d-flex justify-content-between align-items-center">
+                <div class="form-check mb-0">
+                    <input type="checkbox" name="remember" class="form-check-input" id="remember">
+                    <label class="form-check-label" for="remember">Ingat saya</label>
+                </div>
+                <a href="{{ route('password.request') }}" class="text-decoration-none small">Lupa Password?</a>
             </div>
             <button type="submit" class="btn btn-primary w-100">
                 <i class="fa fa-sign-in-alt me-1"></i> Masuk
