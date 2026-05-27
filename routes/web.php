@@ -10,9 +10,15 @@ use App\Http\Controllers\Mahasiswa;
 Route::get('/', fn() => redirect()->route('login'));
 
 // Auth
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('login', [LoginController::class, 'login']);
-Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('login', [Auth\LoginController::class, 'showLoginForm'])->name('login');
+Route::post('login', [Auth\LoginController::class, 'login']);
+Route::post('logout', [Auth\LoginController::class, 'logout'])->name('logout');
+
+// Lupa Password
+Route::get('password/reset', [Auth\ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('password/email', [Auth\ForgotPasswordController::class, 'verifyEmail'])->name('password.email');
+Route::get('password/reset/new', [Auth\ForgotPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [Auth\ForgotPasswordController::class, 'reset'])->name('password.update');
 
 // Admin
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
