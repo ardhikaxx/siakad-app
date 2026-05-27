@@ -18,8 +18,12 @@
     </div>
 </div>
 <div class="card">
-    <div class="card-header">
+    <div class="card-header d-flex justify-content-between align-items-center">
         <h6 class="mb-0"><i class="fa fa-clipboard-list me-2"></i>Mahasiswa Terdaftar ({{ $schedule->enrollments->count() }})</h6>
+        <div class="btn-group">
+            <button class="btn btn-primary btn-sm active">Daftar Mahasiswa</button>
+            <a href="{{ route('dosen.meetings.index', $schedule) }}" class="btn btn-outline-secondary btn-sm">Daftar Pertemuan</a>
+        </div>
     </div>
     <div class="card-body p-0">
         <table class="table table-hover table-striped mb-0">
