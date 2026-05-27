@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="row g-3 mb-4">
-    <div class="col-md-4 col-lg">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card stat-card border-primary">
             <div class="card-body d-flex align-items-center gap-3">
                 <div class="bg-primary bg-opacity-10 rounded p-3">
@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4 col-lg">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card stat-card border-success">
             <div class="card-body d-flex align-items-center gap-3">
                 <div class="bg-success bg-opacity-10 rounded p-3">
@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4 col-lg">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card stat-card border-info">
             <div class="card-body d-flex align-items-center gap-3">
                 <div class="bg-info bg-opacity-10 rounded p-3">
@@ -42,7 +42,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4 col-lg">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card stat-card border-warning">
             <div class="card-body d-flex align-items-center gap-3">
                 <div class="bg-warning bg-opacity-10 rounded p-3">
@@ -55,7 +55,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4 col-lg">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card stat-card border-danger">
             <div class="card-body d-flex align-items-center gap-3">
                 <div class="bg-danger bg-opacity-10 rounded p-3">
