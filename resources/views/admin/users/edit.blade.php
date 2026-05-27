@@ -28,6 +28,11 @@
                 @error('identifier')<div class="invalid-feedback">{{ $message }}</div>@enderror
             </div>
             <div class="mb-3">
+                <label class="form-label">Alamat</label>
+                <textarea name="address" class="form-control @error('address') is-invalid @enderror" rows="2">{{ old('address', $user->address) }}</textarea>
+                @error('address')<div class="invalid-feedback">{{ $message }}</div>@enderror
+            </div>
+            <div class="mb-3">
                 <label class="form-label">Role</label>
                 <select name="role_id" class="form-select @error('role_id') is-invalid @enderror" required>
                     @foreach($roles as $role)
@@ -40,12 +45,22 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Password Baru <small class="text-muted">(kosongkan jika tidak diubah)</small></label>
-                <input type="password" name="password" class="form-control @error('password') is-invalid @enderror">
-                @error('password')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                <div class="input-group">
+                    <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror">
+                    <button class="btn btn-outline-secondary toggle-password" type="button" data-target="password">
+                        <i class="fa fa-eye"></i>
+                    </button>
+                    @error('password')<div class="invalid-feedback">{{ $message }}</div>@enderror
+                </div>
             </div>
             <div class="mb-3">
                 <label class="form-label">Konfirmasi Password Baru</label>
-                <input type="password" name="password_confirmation" class="form-control">
+                <div class="input-group">
+                    <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
+                    <button class="btn btn-outline-secondary toggle-password" type="button" data-target="password_confirmation">
+                        <i class="fa fa-eye"></i>
+                    </button>
+                </div>
             </div>
             <div class="mb-3 form-check">
                 <input type="checkbox" name="is_active" class="form-check-input" id="is_active" value="1"
