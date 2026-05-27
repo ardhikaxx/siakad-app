@@ -10,7 +10,7 @@
 
 <div class="card mb-3">
     <div class="card-body">
-        <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
             <div>
                 <h6 class="fw-bold mb-1">{{ $schedule->course->name }} ({{ $meeting->title }})</h6>
                 <div class="text-muted small">
@@ -18,7 +18,7 @@
                     <i class="fa fa-door-open me-1"></i>{{ $schedule->room->name }}
                 </div>
             </div>
-            <div class="text-end">
+            <div>
                 <span class="badge bg-primary">Input Presensi</span>
             </div>
         </div>
@@ -32,46 +32,48 @@
     <div class="card-body p-0">
         <form action="{{ route('dosen.attendances.update', [$schedule, $meeting]) }}" method="POST">
             @csrf @method('PUT')
-            <table class="table table-hover table-striped mb-0 align-middle">
-                <thead class="table-light">
-                    <tr>
-                        <th width="50">#</th>
-                        <th>NIM</th>
-                        <th>Nama Mahasiswa</th>
-                        <th class="text-center" width="300">Status Kehadiran</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse($attendances as $attendance)
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td><code>{{ $attendance->student->identifier }}</code></td>
-                        <td>{{ $attendance->student->name }}</td>
-                        <td>
-                            <div class="d-flex justify-content-center gap-3">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="attendances[{{ $attendance->id }}]" 
-                                        id="h_{{ $attendance->id }}" value="Hadir" {{ $attendance->status == 'Hadir' ? 'checked' : '' }}>
-                                    <label class="form-check-label text-success fw-bold" for="h_{{ $attendance->id }}">Hadir</label>
+            <div class="table-responsive">
+                <table class="table table-hover table-striped mb-0 align-middle text-nowrap">
+                    <thead class="table-light">
+                        <tr>
+                            <th width="50">#</th>
+                            <th>NIM</th>
+                            <th>Nama Mahasiswa</th>
+                            <th class="text-center" width="300">Status Kehadiran</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($attendances as $attendance)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td><code>{{ $attendance->student->identifier }}</code></td>
+                            <td>{{ $attendance->student->name }}</td>
+                            <td>
+                                <div class="d-flex justify-content-center gap-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="attendances[{{ $attendance->id }}]" 
+                                            id="h_{{ $attendance->id }}" value="Hadir" {{ $attendance->status == 'Hadir' ? 'checked' : '' }}>
+                                        <label class="form-check-label text-success fw-bold" for="h_{{ $attendance->id }}">Hadir</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="attendances[{{ $attendance->id }}]" 
+                                            id="i_{{ $attendance->id }}" value="Ijin" {{ $attendance->status == 'Ijin' ? 'checked' : '' }}>
+                                        <label class="form-check-label text-warning fw-bold" for="i_{{ $attendance->id }}">Ijin</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="attendances[{{ $attendance->id }}]" 
+                                            id="a_{{ $attendance->id }}" value="Alpa" {{ $attendance->status == 'Alpa' ? 'checked' : '' }}>
+                                        <label class="form-check-label text-danger fw-bold" for="a_{{ $attendance->id }}">Alpa</label>
+                                    </div>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="attendances[{{ $attendance->id }}]" 
-                                        id="i_{{ $attendance->id }}" value="Ijin" {{ $attendance->status == 'Ijin' ? 'checked' : '' }}>
-                                    <label class="form-check-label text-warning fw-bold" for="i_{{ $attendance->id }}">Ijin</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="attendances[{{ $attendance->id }}]" 
-                                        id="a_{{ $attendance->id }}" value="Alpa" {{ $attendance->status == 'Alpa' ? 'checked' : '' }}>
-                                    <label class="form-check-label text-danger fw-bold" for="a_{{ $attendance->id }}">Alpa</label>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    @empty
-                    <tr><td colspan="4" class="text-center text-muted py-4">Tidak ada data mahasiswa.</td></tr>
-                    @endforelse
-                </tbody>
-            </table>
+                            </td>
+                        </tr>
+                        @empty
+                        <tr><td colspan="4" class="text-center text-muted py-4">Tidak ada data mahasiswa.</td></tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
             <div class="card-footer bg-white text-end">
                 <button type="submit" class="btn btn-primary px-4">
                     <i class="fa fa-save me-1"></i> Simpan Presensi

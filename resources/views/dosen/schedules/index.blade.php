@@ -2,13 +2,13 @@
 @section('title', 'Jadwal Mengajar')
 
 @section('content')
-<div class="card">
-    <div class="card-header">
+<div class="card shadow-sm">
+    <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center flex-wrap gap-2">
         <h6 class="mb-0"><i class="fa fa-calendar-alt me-2"></i>Jadwal Mengajar Saya</h6>
     </div>
     <div class="card-body p-0">
         <div class="table-responsive">
-            <table class="table table-hover table-striped mb-0">
+            <table class="table table-hover table-striped mb-0 text-nowrap align-middle">
                 <thead class="table-dark">
                     <tr><th>#</th><th>Mata Kuliah</th><th>Ruangan</th><th>Hari</th><th>Jam</th><th>Semester</th><th>Peserta</th><th>Aksi</th></tr>
                 </thead>
