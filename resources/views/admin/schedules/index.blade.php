@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="card">
-    <div class="card-header d-flex justify-content-between align-items-center">
+    <div class="card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
         <h6 class="mb-0"><i class="fa fa-calendar-alt me-2"></i>Daftar Jadwal</h6>
         <a href="{{ route('admin.schedules.create') }}" class="btn btn-primary btn-sm">
             <i class="fa fa-plus me-1"></i> Tambah Jadwal
@@ -15,7 +15,7 @@
                 <thead class="table-dark">
                     <tr>
                         <th>#</th><th>Mata Kuliah</th><th>Dosen</th><th>Ruangan</th>
-                        <th>Hari</th><th>Jam</th><th>Semester</th><th>Peserta</th><th>Aksi</th>
+                        <th>Hari</th><th>Jam</th><th>Semester</th><th>Peserta</th><th class="text-nowrap">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,7 +36,7 @@
                                 {{ $s->enrollments_count ?? $s->enrollments->count() }} mhs
                             </a>
                         </td>
-                        <td>
+                        <td class="text-nowrap">
                             <a href="{{ route('admin.schedules.edit', $s) }}" class="btn btn-sm btn-outline-warning">
                                 <i class="fa fa-edit"></i>
                             </a>
